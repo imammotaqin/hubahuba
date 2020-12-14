@@ -1,0 +1,10 @@
+---
+# Enforece Policy for rhel 
+- hosts: all
+ 
+  tasks:
+  - name : remove package tftp-server
+    yum: name=tftp-server state=absent update_cache=true
+  
+  - lineinfile: dest=/etc/services regexp='^tftp            69/tcp' line='#tftp            69/tcp'
+  - lineinfile: dest=/etc/services regexp='^tftp            69/udp' line='#tftp            69/udp'
