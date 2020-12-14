@@ -1,0 +1,11 @@
+ls
+cd C:\D\office\git
+git init
+git remote add origin https://github.com/imammotaqin/hubahuba.git
+git remote -v
+git add . 
+git commit -m "First Commit"
+git push origin master
+git fetch
+
+git help
